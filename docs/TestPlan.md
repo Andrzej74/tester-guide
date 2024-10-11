@@ -34,6 +34,7 @@ Zakres testów obejmuje weryfikację kluczowych funkcji aplikacji, takich jak:
 
 ## 7. Narzędzia Testowe
 - **Cypress**: Główne narzędzie do automatyzacji testów end-to-end, funkcjonalnych i UI. 
+- **Postman**: Narzędie do testów API.
 - **Node.js**: Wersja 16.x – środowisko uruchomieniowe dla Cypressa i projektu.
 - **GitHub Actions** (opcjonalnie): Narzędzie CI/CD do automatycznego uruchamiania testów.
 - **Firebase**: Platforma backendowa używana do zarządzania autoryzacją użytkowników i stanem aplikacji.
