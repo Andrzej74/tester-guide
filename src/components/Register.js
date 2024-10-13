@@ -1,20 +1,25 @@
-// src/components/Register.js
 import React, { useState } from "react";
 import { auth } from "../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      alert("Konto zostało utworzone!");
+      navigate("/profile"); // Przekierowanie do profilu po poprawnej rejestracji
     } catch (err) {
-      setError(err.message);
+      if (err.code === "auth/email-already-in-use") {
+        setError("Konto z podanym emailem istnieje."); // Obsługa istniejącego konta
+      } else {
+        setError("Błąd rejestracji"); // Inne błędy
+      }
     }
   };
 
@@ -39,6 +44,7 @@ const Register = () => {
         <button type="submit">Zarejestruj się</button>
         {error && <p>{error}</p>}
       </form>
+      <p>Masz już konto? <a href="/login">Zaloguj się</a></p> {/* Link do logowania */}
     </div>
   );
 };
