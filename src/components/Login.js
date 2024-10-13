@@ -24,17 +24,19 @@ const Login = () => {
       <form onSubmit={handleLogin}>
         <input
           type="email"
+          id="login-email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
+          id="login-password"
           placeholder="Hasło"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Zaloguj się</button>
+        <button type="submit" id="login-submit">Zaloguj się</button>
         {error && <p>{error}</p>}
       </form>
     </div>

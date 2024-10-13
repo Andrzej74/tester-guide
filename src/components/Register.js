@@ -24,12 +24,14 @@ const Register = () => {
       <form onSubmit={handleRegister}>
         <input
           type="email"
+          id="register-email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
+          id="register-password"
           placeholder="Hasło"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
