@@ -9,8 +9,40 @@ const Register = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  // Funkcja walidująca hasło
+  const validatePassword = (password) => {
+    const minLength = 8;
+    const maxLength = 128;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumber = /\d/.test(password);
+
+    if (password.length < minLength) {
+      return "Hasło musi mieć co najmniej 8 znaków.";
+    }
+    if (password.length > maxLength) {
+      return "Hasło nie może mieć więcej niż 128 znaków.";
+    }
+    if (!hasUpperCase) {
+      return "Hasło musi zawierać co najmniej jedną wielką literę.";
+    }
+    if (!hasLowerCase) {
+      return "Hasło musi zawierać co najmniej jedną małą literę.";
+    }
+    if (!hasNumber) {
+      return "Hasło musi zawierać co najmniej jedną cyfrę.";
+    }
+    return null; // Walidacja przeszła
+  };
+
   const handleRegister = async (e) => {
     e.preventDefault();
+    const passwordError = validatePassword(password);
+    if (passwordError) {
+      setError(passwordError);
+      return;
+    }
+
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       navigate("/profile"); // Przekierowanie do profilu po poprawnej rejestracji
