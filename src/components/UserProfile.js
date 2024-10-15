@@ -34,8 +34,8 @@ const UserProfile = () => {
       {user ? (
         <div>
           <p>Zalogowany jako: {user.email}</p>
-          <button onClick={handleLogout}>Wyloguj się</button>
-          <button onClick={handleDeleteAccount}>Usuń konto</button>
+          <button onClick={handleLogout} id="logout-button">Wyloguj się</button>
+          <button onClick={handleDeleteAccount} id="delete-account-button">Usuń konto</button>
         </div>
       ) : (
         <p>Brak zalogowanego użytkownika</p>

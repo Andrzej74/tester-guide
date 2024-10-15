@@ -7,9 +7,15 @@ const Home = () => {
       <h1>Welcome to the Tester Guide</h1>
       <nav>
         <ul>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/register">Register</Link></li>
-          <li><Link to="/profile">Profile</Link></li>
+          <li>
+            <Link to="/login" id="home-login-link">Login</Link>
+          </li>
+          <li>
+            <Link to="/register" id="home-register-link">Register</Link>
+          </li>
+          <li>
+            <Link to="/profile" id="home-profile-link">Profile</Link>
+          </li>
         </ul>
       </nav>
     </div>

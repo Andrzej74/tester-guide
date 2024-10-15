@@ -38,9 +38,9 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit" id="login-submit">Zaloguj się</button>
-        {error && <p>{error}</p>}
+        {error && <p id="login-error">{error}</p>}
       </form>
-      <p>Nie masz konta? <a href="/register">Zarejestruj się</a></p> {/* Link do rejestracji */}
+      <p>Nie masz konta? <a href="/register" id="login-register-link">Zarejestruj się</a></p> {/* Link do rejestracji */}
     </div>
   );
 };
