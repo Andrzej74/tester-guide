@@ -38,10 +38,15 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     const passwordError = validatePassword(password);
+    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      setError("Niepoprawny format adresu e-mail.");
+      return;
+    }
     if (passwordError) {
       setError(passwordError);
       return;
     }
+    
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
@@ -58,7 +63,7 @@ const Register = () => {
   return (
     <div>
       <h2>Rejestracja</h2>
-      <form onSubmit={handleRegister}>
+      <form onSubmit={handleRegister} noValidate>
         <input
           type="email"
           id="register-email"
@@ -74,9 +79,9 @@ const Register = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit" id="register-submit">Zarejestruj się</button>
-        {error && <p id="register-error">{error}</p>}
+        {error && <p id="register-error">{error}</p>} {/* Wyświetlenie komunikatu o błędzie */}
       </form>
-      <p>Masz już konto? <a href="/login" id="register-login-link">Zaloguj się</a></p> {/* Link do logowania */}
+      <p>Masz już konto? <a href="/login">Zaloguj się</a></p>
     </div>
   );
 };
