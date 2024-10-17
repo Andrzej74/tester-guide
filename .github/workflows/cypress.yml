@@ -29,7 +29,7 @@ jobs:
 
       # Dodaj 20-sekundowe opóźnienie, aby upewnić się, że aplikacja jest gotowa
       - name: Wait for application to start
-        run: sleep 20
+        run: sleep 30
 
       # Run Cypress tests
       - name: Run Cypress tests
