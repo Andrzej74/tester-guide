@@ -27,9 +27,9 @@ jobs:
         env:
           CI: true
 
-      # Dodaj 20-sekundowe opóźnienie, aby upewnić się, że aplikacja jest gotowa
+      # Dodaj 60-sekundowe opóźnienie, aby upewnić się, że aplikacja jest gotowa
       - name: Wait for application to start
-        run: sleep 30
+        run: sleep 60
 
       # Run Cypress tests
       - name: Run Cypress tests
