@@ -21,6 +21,16 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      # Check if port 3000 is free
+      - name: Check if port 3000 is free
+        run: |
+          if lsof -i :3000; then
+            echo "Port 3000 is already in use, failing the job."
+            exit 1
+          else
+            echo "Port 3000 is free."
+          fi
+
       # Start the application in the background
       - name: Start application
         run: npm run build && npm start &
