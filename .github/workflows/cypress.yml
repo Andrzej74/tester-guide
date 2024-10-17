@@ -9,27 +9,31 @@ jobs:
     steps:
       # Checkout repo
       - name: Checkout code
-        uses: actions/checkout@v3  # Zaktualizowana wersja do v3
+        uses: actions/checkout@v3
 
       # Setup Node.js environment
       - name: Setup Node.js
-        uses: actions/setup-node@v3  # Zaktualizowana wersja do v3
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Możesz użyć również '20' zamiast '16'
+          node-version: '20'
 
-      # Install dependencies
+      # Install dependencies with --legacy-peer-deps flag
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # Run the application (replace with your build/start command)
+      # Start the application in the background
       - name: Start application
         run: npm run build && npm start &
         env:
           CI: true
 
-      # Dodaj 60-sekundowe opóźnienie, aby upewnić się, że aplikacja jest gotowa
+      # Wait for the application to be ready on localhost:3000
       - name: Wait for application to start
-        run: npx wait-on http://localhost:3000
+        run: npx wait-on http://localhost:3000 --timeout 120000
+
+      # Check open ports to verify the server is running
+      - name: Check open ports
+        run: netstat -tuln
 
       # Run Cypress tests
       - name: Run Cypress tests
