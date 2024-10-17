@@ -29,7 +29,7 @@ jobs:
 
       # Dodaj 60-sekundowe opóźnienie, aby upewnić się, że aplikacja jest gotowa
       - name: Wait for application to start
-        run: sleep 60
+        run: npx wait-on http://localhost:3000
 
       # Run Cypress tests
       - name: Run Cypress tests
