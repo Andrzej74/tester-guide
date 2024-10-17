@@ -19,7 +19,7 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       # Run the application (replace with your build/start command)
       - name: Start application
