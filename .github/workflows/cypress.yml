@@ -27,15 +27,9 @@ jobs:
         env:
           CI: true
 
-        # Wait for the app to be ready (sleep for 10 seconds)
-      - name: Wait for 10 seconds
-        run: sleep 10
-
-      # Wait for the application to be ready on port 3000
-      - name: Wait for the application to be ready
-        uses: jakejarvis/wait-on-action@v1
-        with:
-          url: http://localhost:3000
+      # Dodaj 20-sekundowe opóźnienie, aby upewnić się, że aplikacja jest gotowa
+      - name: Wait for application to start
+        run: sleep 20
 
       # Run Cypress tests
       - name: Run Cypress tests
