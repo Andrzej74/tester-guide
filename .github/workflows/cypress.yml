@@ -25,7 +25,7 @@ jobs:
       - name: Start application and log output
         run: |
           npm run build
-          npm start > app.log 2>&1 &
+          npm start
         env:
           CI: true
           FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
@@ -38,7 +38,7 @@ jobs:
 
       # Wait for the application to start on localhost:3000 using wait-on
       - name: Wait for application to start
-        run: npx wait-on http://localhost:3000 --timeout 120000 || (echo "App logs:" && cat app.log && exit 1)
+        run: npx wait-on http://localhost:3000 --timeout 120000
 
       # Display application logs in case of failure
       - name: Display application logs
