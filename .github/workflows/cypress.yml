@@ -17,15 +17,17 @@ jobs:
         with:
           node-version: '20'
 
-      # Install dependencies with --legacy-peer-deps flag
+      # Install dependencies
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # Start the application and log output
-      - name: Start application and log output
-        run: |
-          npm run build
-          npm start > app.log 2>&1 &
+      # Build the application
+      - name: Build the application
+        run: npm run build
+
+      # Start the application in production mode and log output
+      - name: Start application
+        run: npm start &
         env:
           CI: true
           FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
@@ -36,14 +38,9 @@ jobs:
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
 
-      # Wait for the application to start on localhost:3000 using wait-on
+      # Wait for the application to start
       - name: Wait for application to start
-        run: npx wait-on http://localhost:3000 --timeout 120000 || (echo "App logs:" && cat app.log && exit 1)
-
-      # Display application logs in case of failure
-      - name: Display application logs
-        if: failure()
-        run: cat app.log
+        run: npx wait-on http://localhost:3000 --timeout 120000
 
       # Run Cypress tests
       - name: Run Cypress tests
