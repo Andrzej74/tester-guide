@@ -31,6 +31,13 @@ jobs:
           echo "REACT_APP_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}" >> .env
           echo "REACT_APP_FIREBASE_APP_ID=${{ secrets.FIREBASE_APP_ID }}" >> .env
 
+      # Log Firebase secrets (for debugging)
+      - name: Log Firebase secrets (for debugging)
+        run: |
+          echo "FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}"
+          echo "FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}"
+          echo "FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}"
+
       # Build and start the app
       - name: Build and start the application
         run: |
