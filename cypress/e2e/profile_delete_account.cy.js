@@ -1,5 +1,5 @@
 describe('User Registration and Further Actions', () => {
-  it('should register a new user, login, and delete the account', () => {
+  it('should register a new and delete the account', () => {
     // Rejestracja użytkownika
     cy.visit('/register');
     cy.get('#register-email').type('testa@test.com');
@@ -7,7 +7,7 @@ describe('User Registration and Further Actions', () => {
     cy.get('#register-submit').click();
 
     // Sprawdzenie przekierowania na stronę profilu
-    cy.url().should('include', '/profile');
+    cy.url({ timeout: 1000 }).should('include', '/profile');
     cy.contains('Zalogowany jako: testa@test.com');
 
     // Usunięcie konta
