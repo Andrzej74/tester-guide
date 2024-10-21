@@ -7,7 +7,7 @@ describe('Profile - Logout', () => {
       cy.get('#login-submit').click();
   
       cy.url().should('include', '/profile');
-      cy.contains('Zalogowany jako test@test.com');
+      cy.contains('Zalogowany jako: test@test.com');
   
       cy.get('#logout-button').click();
 
@@ -19,7 +19,7 @@ describe('Profile - Logout', () => {
       cy.get('#login-submit').click();
   
       cy.url().should('include', '/profile');
-      cy.contains('Zalogowany jako test@test.com');
+      cy.contains('Zalogowany jako: test@test.com');
     });
   });
   
