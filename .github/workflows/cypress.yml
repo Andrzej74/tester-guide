@@ -47,7 +47,12 @@ jobs:
       - name: Run Cypress tests
         run: npm run cypress:run
 
-      # (Optional) Print app log for debugging purposes if tests fail
-      - name: Print app logs
-        if: failure()
-        run: cat app.log
+      # Przechowywanie wyników testów jako artefaktów w GitHub Actions
+      - name: Upload Cypress screenshots and videos
+        if: failure() # tylko jeśli testy zawiodą
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-artifacts
+          path: |
+            cypress/screenshots
+            cypress/videos
