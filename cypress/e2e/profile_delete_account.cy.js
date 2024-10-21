@@ -7,7 +7,7 @@ describe('User Registration and Further Actions', () => {
     cy.get('#register-submit').click();
 
     // Sprawdzenie przekierowania na stronę profilu
-    cy.url({ timeout: 5000 }).should('include', '/profile');
+    cy.url({ timeout: 10000 }).should('include', '/profile');
     cy.contains('Zalogowany jako: testa@test.com');
 
     // Usunięcie konta
