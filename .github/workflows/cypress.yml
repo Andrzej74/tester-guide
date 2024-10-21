@@ -56,3 +56,19 @@ jobs:
           path: |
             cypress/screenshots
             cypress/videos
+
+      # Upload screenshots as artifacts if tests fail
+      - name: Upload Cypress screenshots
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      # Upload videos as artifacts if tests fail
+      - name: Upload Cypress videos
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-videos
+          path: cypress/videos
