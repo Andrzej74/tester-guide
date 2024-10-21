@@ -8,7 +8,7 @@ describe('User Registration and Further Actions', () => {
 
     // Sprawdzenie przekierowania na stronę profilu
     cy.url().should('include', '/profile');
-    cy.contains('Zalogowany jako testa@test.com');
+    cy.contains('Zalogowany jako: testa@test.com');
 
     // Usunięcie konta
     cy.get('#delete-account-button').click();
