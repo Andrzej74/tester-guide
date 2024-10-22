@@ -47,7 +47,3 @@ jobs:
       - name: Run Cypress tests
         run: npm run cypress:run
 
-      # (Optional) Print app log for debugging purposes if tests fail
-      - name: Print app logs
-        if: failure()
-        run: cat app.log
