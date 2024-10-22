@@ -1,0 +1,67 @@
+/* Home.css */
+
+/* Import czcionki */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Ustawienie czcionki dla całego dokumentu */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #e0f7fa; /* Jasne tło */
+}
+
+/* Styl dla kontenera głównego */
+.home-container {
+  text-align: center;
+  padding: 50px;
+}
+
+/* Styl dla logo */
+.home-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+/* Styl dla tytułu strony */
+.home-title {
+  font-size: 36px;
+  color: #1976d2;
+  margin-bottom: 40px;
+}
+
+/* Styl dla nawigacji */
+.home-nav {
+  margin-top: 20px;
+}
+
+/* Styl dla listy nawigacyjnej */
+.home-nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styl dla elementów listy */
+.home-nav-item {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* Styl dla linków */
+.home-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 12px 24px;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 25px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Efekt hover dla linków */
+.home-link:hover {
+  background-color: #1976d2;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
