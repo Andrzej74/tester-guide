@@ -13,9 +13,9 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/profile"); // Przekierowanie na profil po poprawnym logowaniu
+      navigate("/dashboard"); // Przekierowanie na dashboard po zalogowaniu
     } catch (err) {
-      setError("Błąd logowania"); // Wyświetlenie błędu w przypadku nieudanego logowania
+      setError("Błąd logowania");
     }
   };
 

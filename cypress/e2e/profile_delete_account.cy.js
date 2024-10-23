@@ -6,11 +6,11 @@ describe('User Registration and Further Actions', () => {
     cy.get('#register-password').type('Test1234');
     cy.get('#register-submit').click();
 
-    // Sprawdzenie przekierowania na stronę profilu
-    cy.url({ timeout: 10000 }).should('include', '/profile');
-    cy.contains('Zalogowany jako: testa@test.com');
+    cy.url().should('include', '/dashboard');
+    cy.contains('Twój Dashboard');
 
     // Usunięcie konta
+    cy.visit('/profile');
     cy.get('#delete-account-button').click();
     cy.url().should('eq', 'http://localhost:3000/');
 
@@ -22,5 +22,3 @@ describe('User Registration and Further Actions', () => {
     cy.get('#login-error').should('contain', 'Błąd logowania');
   });
 });
-
-  

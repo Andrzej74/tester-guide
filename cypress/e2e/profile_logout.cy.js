@@ -6,9 +6,10 @@ describe('Profile - Logout', () => {
       cy.get('#login-password').type('Test1234');
       cy.get('#login-submit').click();
   
-      cy.url().should('include', '/profile');
-      cy.contains('Zalogowany jako: test@test.com');
+      cy.url().should('include', '/dashboard');
+      cy.contains('Twój Dashboard');
   
+      cy.visit('/profile');
       cy.get('#logout-button').click();
 
       cy.url().should('eq', 'http://localhost:3000/'); 
@@ -18,8 +19,7 @@ describe('Profile - Logout', () => {
       cy.get('#login-password').type('Test1234');
       cy.get('#login-submit').click();
   
-      cy.url().should('include', '/profile');
-      cy.contains('Zalogowany jako: test@test.com');
+      cy.url().should('include', '/dashboard');
+      cy.contains('Twój Dashboard');
     });
   });
-  
