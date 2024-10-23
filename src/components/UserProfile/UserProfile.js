@@ -1,6 +1,6 @@
 import React from "react";
-import { useAuth } from "../contexts/AuthContext";
-import { auth } from "../firebaseConfig";
+import { useAuth } from "../../contexts/AuthContext";
+import { auth } from "../../firebaseConfig";
 import { signOut, deleteUser } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 

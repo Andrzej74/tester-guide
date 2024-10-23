@@ -1,3 +1,6 @@
+@import './styles/variables.css';
+@import './styles/global.css';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +8,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--background-primary-default); /* Zmienne z variables.css */
+  color: var(--text-primary-default);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit; /* Dziedziczenie koloru z ciała dokumentu */
+  text-decoration: none; /* Brak podkreślenia domyślnego */
 }
 
 code {

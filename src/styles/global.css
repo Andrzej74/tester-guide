@@ -1,0 +1,122 @@
+/* /src/styles/global.css */
+
+/* Import zmiennych */
+@import './variables.css';
+
+/* Resetowanie marginesów, paddingów i ustawienia box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Podstawowe style dla body */
+body {
+  font-family: 'Roboto', sans-serif; /* Można dostosować do preferowanej czcionki */
+  background-color: var(--background-primary-default); /* Główne tło aplikacji */
+  color: var(--text-primary-default); /* Kolor tekstu */
+  line-height: 1.6; /* Ustawienie wygodnego odstępu między liniami */
+}
+
+/* Podstawowe style dla nagłówków */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--spacing-medium); /* Odstęp dolny między nagłówkami a innymi elementami */
+  font-weight: var(--font-weight-bold); /* Pogrubienie nagłówków */
+  line-height: 1.3; /* Mniejszy odstęp między liniami dla nagłówków */
+}
+
+h1 {
+  font-size: var(--font-size-large); /* Ustawienie wielkości nagłówków */
+}
+
+h2 {
+  font-size: calc(var(--font-size-large) - 2px);
+}
+
+h3 {
+  font-size: var(--font-size-medium);
+}
+
+/* Styl dla paragrafów */
+p {
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Style dla linków */
+a {
+  color: var(--text-link-default); /* Kolor linku */
+  text-decoration: none; /* Brak podkreślenia */
+  transition: color 0.3s ease; /* Płynna zmiana koloru przy hover */
+}
+
+a:hover {
+  color: var(--background-interactive-hover); /* Zmiana koloru linku przy najechaniu */
+}
+
+/* Style dla przycisków */
+button {
+  font-family: inherit; /* Dziedziczenie czcionki */
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--radius-small); /* Zaokrąglenie rogów */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--background-interactive-hover); /* Zmiana koloru tła przy hover */
+}
+
+/* Styl dla list */
+ul {
+  list-style: none; /* Usunięcie stylów listy */
+  padding-left: 0;
+}
+
+/* Styl dla inputów i formularzy */
+input, select, textarea {
+  font-family: inherit;
+  font-size: var(--font-size-medium);
+  padding: var(--spacing-small);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-small);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--border-interactive-default); /* Zmiana koloru obramowania przy focus */
+  box-shadow: 0 0 5px var(--shadow-interactive-default); /* Dodanie cienia przy focus */
+}
+
+/* Odstępy dla sekcji */
+section {
+  margin-bottom: var(--spacing-large); /* Odstęp dolny dla sekcji */
+}
+
+/* Styl dla obrazów */
+img {
+  max-width: 100%; /* Obrazy będą responsywne */
+  height: auto;
+  display: block;
+}
+
+/* Styl dla przycisków formularzy */
+button, input[type="submit"] {
+  background-color: var(--background-interactive-default);
+  color: var(--text-on-interactive-default);
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: var(--background-interactive-hover);
+}
+
+/* Media Queries dla responsywności */
+@media (max-width: 600px) {
+  body {
+    font-size: var(--font-size-small); /* Mniejszy rozmiar tekstu dla mniejszych ekranów */
+  }
+
+  h1 {
+    font-size: var(--font-size-medium); /* Dostosowanie wielkości nagłówków */
+  }
+}

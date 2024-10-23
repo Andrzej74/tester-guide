@@ -1,0 +1,49 @@
+/* /src/styles/variables.css */
+
+/* Poziom 1: Kategoria funkcjonalna */
+/* Poziom 2: Kontekst użycia */
+/* Poziom 3: Wariacje/Stany */
+
+/* Tło */
+:root {
+    --background-primary-default: #e0f7fa; /* Główne tło */
+    --background-secondary-default: #ffffff; /* Tło drugorzędne */
+    --background-interactive-default: #2196f3; /* Tło elementów interaktywnych */
+    --background-interactive-hover: #1976d2; /* Tło elementów interaktywnych w stanie hover */
+    
+    /* Tekst */
+    --text-primary-default: #1976d2; /* Główny kolor tekstu */
+    --text-secondary-default: #333333; /* Drugorzędny kolor tekstu */
+    --text-on-interactive-default: #ffffff; /* Kolor tekstu na elementach interaktywnych */
+    --text-link-default: #1e88e5; /* Kolor tekstu linków */
+    
+    /* Obramowania */
+    --border-default: #e0e0e0; /* Kolor obramowania */
+    --border-interactive-default: #2196f3; /* Kolor obramowania dla elementów interaktywnych */
+  
+    /* Stany informacyjne */
+    --state-success-default: #4caf50; /* Kolor stanu sukcesu */
+    --state-error-default: #f44336; /* Kolor stanu błędu */
+    --state-warning-default: #ff9800; /* Kolor stanu ostrzeżenia */
+    
+    /* Cienie */
+    --shadow-interactive-default: rgba(0, 0, 0, 0.1); /* Cień dla elementów interaktywnych */
+    --shadow-interactive-hover: rgba(0, 0, 0, 0.15); /* Cień dla elementów interaktywnych w stanie hover */
+  
+    /* Dodatkowe odstępy i wymiary */
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+    
+    --radius-small: 4px; /* Zaokrąglenia */
+    --radius-large: 8px;
+  
+    /* Fonty */
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 20px;
+  
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+  }
+  
