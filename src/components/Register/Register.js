@@ -50,7 +50,7 @@ const Register = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/profile"); // Przekierowanie do profilu po poprawnej rejestracji
+      navigate("/dashboard"); // Przekierowanie na dashboard po zalogowaniu
     } catch (err) {
       if (err.code === "auth/email-already-in-use") {
         setError("Konto z podanym emailem istnieje."); // Obsługa istniejącego konta
