@@ -1,0 +1,120 @@
+/* Kontener rejestracji */
+.register-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  /* Tytuł rejestracji */
+  .register-title {
+    font-size: 36px;
+    color: var(--text-primary-default);
+    margin-bottom: 40px;
+  }
+  
+  /* Formularz */
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+  }
+  
+  /* Grupa inputów i przycisku w jednym rzędzie */
+  .register-input-group {
+    display: flex;
+    gap: var(--spacing-small); /* Odstęp między inputami i przyciskiem */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Inputy – dopasowane do stylu przycisków z białym tłem i bez obramowania */
+  .register-input {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: var(--text-primary-default);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px var(--shadow-interactive-default);
+    transition: box-shadow 0.3s;
+    text-align: center;
+    flex: 1; /* Dostosowanie szerokości inputów */
+  }
+  
+  .register-input:focus {
+    outline: none;
+    box-shadow: 0 6px 8px var(--shadow-interactive-hover);
+  }
+  
+  /* Styl dla placeholderów */
+  .register-input::placeholder {
+    color: #b0b0b0;
+  }
+  
+  /* Przycisk rejestracji – dynamiczna szerokość */
+  .register-button {
+    padding: 12px 30px;
+    background-color: var(--background-interactive-default);
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0; /* Zapobiega zmniejszaniu przycisku */
+  }
+  
+  .register-button:hover {
+    background-color: var(--background-interactive-hover);
+    box-shadow: 0 6px 8px var(--shadow-interactive-hover);
+  }
+  
+  /* Wiadomość o błędzie */
+  .register-error {
+    color: var(--state-error-default);
+    font-size: var(--font-size-small);
+    margin-top: var(--spacing-small);
+  }
+  
+/* Kontener na tekst i link do logowania */
+.register-login-container {
+    display: flex;
+    align-items: center; /* Wyśrodkowanie pionowe */
+    justify-content: center;
+    gap: var(--spacing-small);
+    margin-top: var(--spacing-large);
+  }
+  
+  /* Tekst "Masz już konto?" */
+  .register-login-text {
+    font-size: var(--font-size-small);
+    color: var(--text-secondary-default);
+    margin: 0; /* Wyzerowanie marginesu */
+    padding-top: 4px; /* Delikatne przesunięcie w dół dla wyrównania */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Link "Zaloguj się" – zmniejszony rozmiar i dopasowanie do loginu */
+  .register-login-link {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--background-interactive-default);
+    padding: 4px 10px; /* Dopasowany padding */
+    border-radius: 25px;
+    font-weight: 400;
+    font-size: var(--font-size-small);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    line-height: 1; /* Dostosowanie linii tekstu */
+  }
+  
+  .register-login-link:hover {
+    background-color: var(--background-interactive-hover);
+    box-shadow: 0 6px 8px var(--shadow-interactive-hover);
+    color: #ffffff;
+  }
+  
+  

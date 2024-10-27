@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import './Register.css';
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -9,7 +10,6 @@ const Register = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // Funkcja walidująca hasło
   const validatePassword = (password) => {
     const minLength = 8;
     const maxLength = 128;
@@ -32,7 +32,7 @@ const Register = () => {
     if (!hasNumber) {
       return "Hasło musi zawierać co najmniej jedną cyfrę.";
     }
-    return null; // Walidacja przeszła
+    return null;
   };
 
   const handleRegister = async (e) => {
@@ -46,42 +46,50 @@ const Register = () => {
       setError(passwordError);
       return;
     }
-    
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); // Przekierowanie na dashboard po zalogowaniu
+      navigate("/dashboard");
     } catch (err) {
       if (err.code === "auth/email-already-in-use") {
-        setError("Konto z podanym emailem istnieje."); // Obsługa istniejącego konta
+        setError("Konto z podanym emailem istnieje.");
       } else {
-        setError("Błąd rejestracji"); // Inne błędy
+        setError("Błąd rejestracji");
       }
     }
   };
 
   return (
-    <div>
-      <h2>Rejestracja</h2>
-      <form onSubmit={handleRegister} noValidate>
-        <input
-          type="email"
-          id="register-email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          id="register-password"
-          placeholder="Hasło"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" id="register-submit">Zarejestruj się</button>
-        {error && <p id="register-error">{error}</p>} {/* Wyświetlenie komunikatu o błędzie */}
+    <div className="register-container">
+      <h2 className="register-title">Rejestracja</h2>
+      <form onSubmit={handleRegister} noValidate className="register-form">
+        <div className="register-input-group">
+          <input
+            type="email"
+            id="register-email"
+            className="register-input"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            id="register-password"
+            className="register-input"
+            placeholder="Hasło"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit" id="register-submit" className="register-button">
+            Zarejestruj się
+          </button>
+        </div>
+        {error && <p id="register-error" className="register-error">{error}</p>}
       </form>
-      <p>Masz już konto? <a href="/login">Zaloguj się</a></p>
+      <div className="register-login-container">
+        <p className="register-login-text">Masz już konto?</p>
+        <a href="/login" className="register-login-link">Zaloguj się</a>
+      </div>
     </div>
   );
 };
