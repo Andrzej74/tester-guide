@@ -15,7 +15,7 @@ const Home = () => {
             <Link to="/register" id="home-register-link" className="home-link">Register</Link>
           </li>
           <li className="home-nav-item">
-            <Link to="/profile" id="home-profile-link" className="home-link">Profile</Link>
+            <Link to="/dashboard" id="home-dashboard-link" className="home-link">Dashboard</Link>
           </li>
         </ul>
       </nav>
