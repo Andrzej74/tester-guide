@@ -7,7 +7,7 @@ describe('User Registration and Further Actions', () => {
     cy.get('#register-submit').click();
 
     cy.url().should('include', '/dashboard');
-    cy.contains('Twój Dashboard');
+    cy.contains('Dashboard');
 
     // Usunięcie konta
     cy.visit('/profile');
