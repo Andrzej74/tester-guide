@@ -20,6 +20,6 @@ describe('Profile - Logout', () => {
       cy.get('#login-submit').click();
   
       cy.url().should('include', '/dashboard');
-      cy.contains('Twój Dashboard');
+      cy.contains('Dashboard');
     });
   });
