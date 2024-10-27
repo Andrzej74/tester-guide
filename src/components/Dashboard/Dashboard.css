@@ -1,0 +1,96 @@
+/* /src/components/Dashboard/Dashboard.css */
+
+/* Główna sekcja kontenera */
+.dashboard-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Tytuł główny Dashboard */
+  .dashboard-title {
+    font-size: 36px;
+    color: var(--text-primary-default);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Każdy poziom jako karta */
+  .dashboard-level {
+    background-color: var(--background-secondary-default);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .dashboard-level:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Tytuł poziomu */
+  .level-title {
+    font-size: 24px;
+    color: var(--text-primary-default);
+    margin-bottom: 15px;
+  }
+  
+  /* Lista modułów */
+  .module-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Element listy modułu */
+  .module-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0; /* Odstęp między modułami */
+  }
+  
+  /* Checkbox modułu */
+  .module-checkbox {
+    margin-right: 10px; /* Odstęp między checkboxem a tytułem modułu */
+  }
+  
+  /* Link do modułu */
+  .module-link {
+    text-decoration: none;
+    color: var(--text-secondary-default);
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .module-link:hover {
+    color: var(--background-interactive-hover);
+  }
+  
+  /* Przycisk Start */
+  .start-button {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: var(--background-interactive-default);
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Szerokość na pełny rząd */
+    max-width: 200px; /* Maksymalna szerokość przycisku */
+    display: block;
+    margin: 30px auto; /* Wyśrodkowanie przycisku */
+  }
+  
+  .start-button:hover {
+    background-color: var(--background-interactive-hover);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .start-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
