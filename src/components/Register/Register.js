@@ -62,6 +62,14 @@ const Register = () => {
   return (
     <div className="register-container">
       <h2 className="register-title">Rejestracja</h2>
+      
+      <div className="register-warning">
+        <p>
+          <strong>Drogi Użytkowniku, Droga Użytkowniczko!</strong> Ponieważ dane w tej aplikacji 
+          nie są na razie chronione w żaden sposób, nie podawaj swoich prawdziwych danych.
+        </p>
+      </div>
+      
       <form onSubmit={handleRegister} noValidate className="register-form">
         <div className="register-input-group">
           <input

@@ -4,7 +4,7 @@
 
 ### Iteration 1: User Authorization
 - **Features**: User registration and login.
-- **Tests**: TC-01 (Registration), TC-02 (Registration with existing email), TC-03 (Login).
+- **Tests**: Registration, Registration with existing email, TC-03 Login.
 - **Objective**: Enable users to create accounts and log into the application.
   
 ### Iteration 2: Module Selection
