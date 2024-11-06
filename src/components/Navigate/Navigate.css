@@ -1,0 +1,33 @@
+/* Kontener przycisków nawigacji */
+.navigation-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Ogólne stylizacje przycisków nawigacji */
+  .nav-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: var(--background-interactive-default);
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Efekt hover */
+  .nav-button:hover {
+    background-color: var(--background-interactive-hover);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styl przycisków nieaktywnych (disabled) */
+  .nav-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    color: #666666;
+  }

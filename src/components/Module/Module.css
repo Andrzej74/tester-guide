@@ -1,0 +1,42 @@
+/* Kontener modułu */
+.module-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-secondary-default);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  /* Tytuł modułu */
+  .module-title {
+    font-size: 32px;
+    color: var(--text-primary-default);
+    margin-bottom: 20px;
+  }
+  
+  /* Dodaj style nawigacji dla spójności */
+  .navigate-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .navigate-button {
+    padding: 10px 20px;
+    background-color: var(--background-interactive-default);
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .navigate-button:hover {
+    background-color: var(--background-interactive-hover);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
