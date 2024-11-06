@@ -5,7 +5,7 @@ import Home from "./components//Home/Home";
 import Login from "./components//Login/Login";
 import Register from "./components/Register/Register";
 import UserProfile from "./components/UserProfile/UserProfile";
-import Dashboard from "./components/Dashboard/Dashboad";
+import Dashboard from "./components/Dashboard/Dashboard";
 import Module from "./components/Module/Module";
 
 function App() {

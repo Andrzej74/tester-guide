@@ -1,11 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Navigate from "../Navigate/Navigate";
+import { moduleUrlMap } from "../Dashboard/Dashboard";
 import "./Module.css";
 
 const Module = () => {
   const { moduleName } = useParams();
-  const title = moduleName.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+
+  // Znajdź moduł o pasującym URL
+  const module = moduleUrlMap.find((mod) => mod.url === moduleName);
+  const title = module ? module.title : "Moduł nieodnaleziony";
 
   return (
     <div className="module-page">
