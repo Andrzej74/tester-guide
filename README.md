@@ -1,8 +1,13 @@
-# Getting Started with Create React App
+# Cypress Testers Guide
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Project Description
+### 1.1. Project Name
+**Name:** Cypress Testers Guide -Testing Web Application with Cypress.
 
-## Available Scripts
+### 1.2. Project Objective
+The goal of the project is to create a web application that serves as a development guide for future automation testers. The application will function as an presentation, allowing users to use it as a mini-course to systematically acquire knowledge. Additionally, the project will include automated tests created in Cypress, aiding in the practical learning of testing.
+
+## 2. Available Scripts
 
 In the project directory, you can run:
 

@@ -17,8 +17,7 @@
   5. Click the "Zarejestruj się" (Register) button.
 
 - **Expected Result**:
-  - The user is redirected to the `/profile` page.
-  - The text `Zalogowany jako test2@test.pl` is displayed.
+  - The user is redirected to the `/dashboard` page.
   - The new user is saved in the database with the correct email and hashed password.
 
   ---
@@ -164,8 +163,7 @@
   3. Click the "Zaloguj się" button.
 
 - **Expected Result**:
-  - The user is redirected to the `/profile` page.
-  - The text `Zalogowany jako test2@test.pl` is displayed.
+  - The user is redirected to the `/dashboard` page.
 
 ---
 
