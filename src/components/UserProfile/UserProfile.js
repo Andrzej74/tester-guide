@@ -1,8 +1,11 @@
+// /src/components/UserProfile/UserProfile.js
+
 import React from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { auth } from "../../firebaseConfig";
 import { signOut, deleteUser } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import "./UserProfile.css";
 
 const UserProfile = () => {
   const { user } = useAuth();
@@ -10,8 +13,8 @@ const UserProfile = () => {
 
   const handleLogout = async () => {
     try {
-      await signOut(auth); // Wylogowanie użytkownika
-      navigate("/"); // Przekierowanie na stronę główną po wylogowaniu
+      await signOut(auth);
+      navigate("/");
     } catch (error) {
       console.error("Błąd podczas wylogowania:", error);
     }
@@ -20,8 +23,8 @@ const UserProfile = () => {
   const handleDeleteAccount = async () => {
     if (user) {
       try {
-        await deleteUser(user); // Usunięcie konta użytkownika
-        navigate("/"); // Przekierowanie na stronę główną po usunięciu konta
+        await deleteUser(user);
+        navigate("/");
       } catch (error) {
         console.error("Błąd podczas usuwania konta:", error);
       }
@@ -29,16 +32,18 @@ const UserProfile = () => {
   };
 
   return (
-    <div>
-      <h2>Profil użytkownika</h2>
+    <div className="user-profile-container">
+      <h2 className="profile-title">Profil użytkownika</h2>
       {user ? (
-        <div>
-          <p>Zalogowany jako: {user.email}</p>
-          <button onClick={handleLogout} id="logout-button">Wyloguj się</button>
-          <button onClick={handleDeleteAccount} id="delete-account-button">Usuń konto</button>
+        <div className="profile-details">
+          <p className="profile-email">Zalogowany jako: <span>{user.email}</span></p>
+          <div className="profile-buttons">
+            <button onClick={handleLogout} className="profile-button logout-button">Wyloguj się</button>
+            <button onClick={handleDeleteAccount} className="profile-button delete-account-button">Usuń konto</button>
+          </div>
         </div>
       ) : (
-        <p>Brak zalogowanego użytkownika</p>
+        <p className="no-user-message">Brak zalogowanego użytkownika</p>
       )}
     </div>
   );

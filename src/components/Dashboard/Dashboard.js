@@ -86,13 +86,21 @@ const Dashboard = () => {
           </ul>
         </div>
       ))}
-      <button
-        onClick={handleStartModule}
-        disabled={selectedModules.length === 0}
-        className="start-button"
-      >
-        Start
-      </button>
+      <div className="button-container">
+        <button
+          onClick={() => navigate("/profile")}
+          className="profile-button"
+        >
+          Profil
+        </button>
+        <button
+          onClick={handleStartModule}
+          disabled={selectedModules.length === 0}
+          className="start-button"
+        >
+          Start
+        </button>
+      </div>
     </div>
   );
 };
