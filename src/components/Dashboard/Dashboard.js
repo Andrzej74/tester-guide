@@ -89,6 +89,7 @@ const Dashboard = () => {
       <div className="button-container">
         <button
           onClick={() => navigate("/profile")}
+          id="profile-button"
           className="profile-button"
         >
           Profil
@@ -96,6 +97,7 @@ const Dashboard = () => {
         <button
           onClick={handleStartModule}
           disabled={selectedModules.length === 0}
+          id="start-button"
           className="start-button"
         >
           Start

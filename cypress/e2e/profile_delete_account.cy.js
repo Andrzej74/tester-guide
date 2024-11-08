@@ -8,9 +8,10 @@ describe('User Registration and Further Actions', () => {
 
     cy.url().should('include', '/dashboard');
     cy.contains('Dashboard');
+    cy.get('#profile-button').click();
 
     // Usunięcie konta
-    cy.visit('/profile');
+    cy.url().should('include', '/profile');
     cy.get('#delete-account-button').click();
     cy.url().should('eq', 'http://localhost:3000/');
 

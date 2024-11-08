@@ -38,8 +38,8 @@ const UserProfile = () => {
         <div className="profile-details">
           <p className="profile-email">Zalogowany jako: <span>{user.email}</span></p>
           <div className="profile-buttons">
-            <button onClick={handleLogout} className="profile-button logout-button">Wyloguj się</button>
-            <button onClick={handleDeleteAccount} className="profile-button delete-account-button">Usuń konto</button>
+            <button onClick={handleLogout} id= "logout-button"className="profile-button logout-button">Wyloguj się</button>
+            <button onClick={handleDeleteAccount} id="delete-account-button" className="profile-button delete-account-button">Usuń konto</button>
           </div>
         </div>
       ) : (
