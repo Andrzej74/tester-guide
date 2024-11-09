@@ -9,20 +9,12 @@ describe('Profile - Logout', () => {
       cy.url().should('include', '/dashboard');
       cy.contains('Dashboard');
   
-      cy.visit('/profile');
+      cy.get('#profile-button').click();
+      
       cy.get('#logout-button').click();
 
-      cy.url().should('eq', 'http://localhost:3000/'); 
-  
-      cy.visit('/login');
-      cy.get('#login-email').type('test@test.com');
-      cy.get('#login-password').type('Test1234');
-      cy.get('#login-submit').click();
-  
-      cy.url().should('include', '/dashboard');
-      cy.contains('Dashboard');
-
-      cy.visit('/profile');
-      cy.contains('Zalogowany jako: test@test.com').should('be.visible');
+      cy.url().should('eq', 'http://localhost:3000/');
+      cy.get('#home-dashboard-link').click()
+      cy.url().should('include', '/login');
     });
   });
