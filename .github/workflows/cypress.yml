@@ -21,6 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      # Uruchomienie skryptu generującego dane testowe
+      - name: Generate test data
+        run: node generateTestData.js
+
       # Create .env file with secrets for Firebase configuration
       - name: Create .env file
         run: |
@@ -47,3 +51,7 @@ jobs:
       - name: Run Cypress tests
         run: npm run cypress:run
 
+      # Clean up test data
+      - name: Clean up test data
+        if: always()    # ensures this step runs even if tests fail
+        run: node cleanTestData.js

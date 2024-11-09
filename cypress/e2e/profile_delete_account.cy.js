@@ -1,9 +1,18 @@
 describe('User Registration and Further Actions', () => {
-  it('should register a new and delete the account', () => {
+  let testData;
+
+  before(() => {
+    // Wczytaj dane testowe przed uruchomieniem testów
+    cy.fixture('testData').then((data) => {
+      testData = data[0];
+    });
+  });
+
+  it('should register a new user and delete the account', () => {
     // Rejestracja użytkownika
     cy.visit('/register');
-    cy.get('#register-email').type('testa@test.com');
-    cy.get('#register-password').type('Test1234');
+    cy.get('#register-email').type(testData.email);
+    cy.get('#register-password').type(testData.password);
     cy.get('#register-submit').click();
 
     cy.url().should('include', '/dashboard');
@@ -17,8 +26,8 @@ describe('User Registration and Further Actions', () => {
 
     // Próba ponownego logowania - konto powinno być usunięte
     cy.visit('/login');
-    cy.get('#login-email').type('testa@test.com');
-    cy.get('#login-password').type('Test1234');
+    cy.get('#login-email').type(testData.email);
+    cy.get('#login-password').type(testData.password);
     cy.get('#login-submit').click();
     cy.get('#login-error').should('contain', 'Błąd logowania');
   });

@@ -21,5 +21,8 @@ describe('Profile - Logout', () => {
   
       cy.url().should('include', '/dashboard');
       cy.contains('Dashboard');
+
+      cy.visit('/profile');
+      cy.contains('Zalogowany jako: test@test.com').should('be.visible');
     });
   });
